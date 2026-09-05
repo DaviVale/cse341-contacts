@@ -1,0 +1,24 @@
+{
+  "name": "cse341-contacts",
+  "version": "1.0.0",
+  "description": "CSE341 Contacts API",
+  "homepage": "https://github.com/DaviVale/cse341-contacts#readme",
+  "bugs": {
+    "url": "https://github.com/DaviVale/cse341-contacts/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaviVale/cse341-contacts.git"
+  },
+  "license": "ISC",
+  "author": "Davi do Vale",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node start.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
