@@ -16,10 +16,10 @@ POST http://localhost:3000/contacts
 Content-Type: application/json
 
 {
-  "firstName": "Michael",
-  "lastName": "Scott",
-  "email": "michael.scott@example.com",
-  "favoriteColor": "Blue",
+  "firstName": "Fernanda",
+  "lastName": "Loreno",
+  "email": "fernanda.loreno@example.com",
+  "favoriteColor": "Pink",
   "birthday": "1965-03-15"
 }
 
@@ -28,9 +28,9 @@ PUT http://localhost:3000/contacts/6aa8c3c09ab3247ce67db657
 Content-Type: application/json
 
 {
-  "firstName": "Michael",
-  "lastName": "Scott",
-  "email": "michael.scott@byu.com",
+  "firstName": "Fernanda",
+  "lastName": "Loreno",
+  "email": "fernanda.loreno@byu.com",
   "favoriteColor": "Green",
   "birthday": "1965-03-15"
 }
