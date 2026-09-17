@@ -1,40 +1,78 @@
-### LOCAL - Get all contacts
+### GET ALL - Returns all contacts
 GET http://localhost:3000/contacts
 
-### LOCAL - Get single contact
-GET http://localhost:3000/contacts/6aa8c1f21ec02cdfa0a25e45
+
+### GET SINGLE - Returns one existing contact
+GET http://localhost:3000/contacts/6aab67ae32d1b7bd8d809494
 
 
-### RENDER - Get all contacts
-GET https://cse341-contacts-17v9.onrender.com/contacts
+### GET SINGLE - Tests invalid MongoDB ObjectId validation
+GET http://localhost:3000/contacts/123
 
-### RENDER - Get single contact
-GET https://cse341-contacts-17v9.onrender.com/contacts/6a9ba30f457d2cdb7475d4c4
 
-### Create a new contact
+### POST - Creates a valid contact
 POST http://localhost:3000/contacts
 Content-Type: application/json
 
 {
-  "firstName": "Fernanda",
-  "lastName": "Loreno",
-  "email": "fernanda.loreno@example.com",
-  "favoriteColor": "Pink",
-  "birthday": "1965-03-15"
+  "firstName": "Carlos",
+  "lastName": "Almeida",
+  "email": "carlos.almeida@example.com",
+  "favoriteColor": "Blue",
+  "birthday": "1994-05-20"
 }
 
-### Update a contact
-PUT http://localhost:3000/contacts/6aa8c3c09ab3247ce67db657
+
+### POST - Tests required field validation
+POST http://localhost:3000/contacts
 Content-Type: application/json
 
 {
-  "firstName": "Fernanda",
-  "lastName": "Loreno",
-  "email": "fernanda.loreno@byu.com",
-  "favoriteColor": "Green",
-  "birthday": "1965-03-15"
+  "firstName": "Carlos",
+  "lastName": "Almeida",
+  "email": "carlos.almeida@example.com",
+  "favoriteColor": "Blue"
 }
 
-### Delete a contact
-DELETE http://localhost:3000/contacts/6aa8c3c09ab3247ce67db657
 
+### POST - Tests email format validation from the Mongoose schema
+POST http://localhost:3000/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Carlos",
+  "lastName": "Almeida",
+  "email": "email-invalido",
+  "favoriteColor": "Blue",
+  "birthday": "1994-05-20"
+}
+
+
+### PUT - Updates an existing contact
+PUT http://localhost:3000/contacts/6aab67ae32d1b7bd8d809494
+Content-Type: application/json
+
+{
+  "firstName": "Carlos",
+  "lastName": "Almeida",
+  "email": "carlos.almeida@byui.edu",
+  "favoriteColor": "Green",
+  "birthday": "1994-05-20"
+}
+
+
+### PUT - Tests validation during an update
+PUT http://localhost:3000/contacts/6aab67ae32d1b7bd8d809494
+Content-Type: application/json
+
+{
+  "firstName": "Carlos",
+  "lastName": "Almeida",
+  "email": "email-invalido",
+  "favoriteColor": "Green",
+  "birthday": "1994-05-20"
+}
+
+
+### DELETE - Deletes the temporary test contact
+DELETE http://localhost:3000/contacts/6aab67ae32d1b7bd8d809494
